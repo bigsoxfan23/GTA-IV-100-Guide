@@ -14,19 +14,26 @@
 </head>
 <body>
   <header class="appbar"><div class="topline"><div class="logo">IV</div><div class="titles"><h1>GTA IV Companion</h1><p>by Big Sox Studios</p></div><div class="bigpct" id="bigPct">0%</div></div><div class="meter"><span id="topMeter"></span></div></header>
-  <section class="dashboard-home">
-    <h2>Continue Your Journey</h2>
+<section class="dashboard-home">
+  <h2>Continue Your Journey</h2>
 
+  <div class="dashboard-grid">
     <div class="card">
-        <h3>Continue Journey</h3>
-        <p>Resume your GTA IV progress where you left off.</p>
-            <button class="control">Continue</button>
+      <h3>Continue Journey</h3>
+      <p>Resume your GTA IV progress where you left off.</p>
+      <button class="control">Continue</button>
     </div>
 
     <div class="card">
-        <h3>Completion</h3>
-        <p>0%</p>
+      <h3>Story Progress</h3>
+      <p>0%</p>
     </div>
+
+    <div class="card">
+      <h3>Completion</h3>
+      <p>0%</p>
+    </div>
+  </div>
 </section>
 <main>
   <section class="hero"><div class="heroIn"><div class="kicker">Liberty City completion tracker</div><h2>Replay roadmap, ordered for 100%</h2><p>Tap boxes as you go. Progress saves on your device. The order is spoiler-light: mission names and unlock timing, not plot explanations.</p><div class="installBox"><b>iPhone install:</b> after hosting, open in Safari → Share → Add to Home Screen. Works offline after the first load.</div><div class="controls"><input id="search" class="search" placeholder="Search missions, friends, pigeons, races…"><button class="control" id="hideDone">Hide done</button><button class="control" id="collapseAll">Collapse</button><button class="control" id="exportBtn">Export</button><label class="control file">Import<input id="importFile" type="file" accept="application/json"></label><button class="control danger" id="resetBtn">Reset</button></div></div><div class="dashboard"><div class="stat"><b id="statDone">0</b><span>Completed tasks</span></div><div class="stat"><b id="statLeft">0</b><span>Remaining tasks</span></div><div class="stat"><b id="statStory">0%</b><span>Story roadmap</span></div><div class="stat"><b id="statSide">0%</b><span>100% cleanup</span></div></div></section>
