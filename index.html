@@ -1,5 +1,6 @@
 <!doctype html>
 <html lang="en">
+
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
@@ -12,30 +13,19 @@
 <title>GTA IV 100% Companion</title>
 <link rel="stylesheet" href="css/styles.css">
 </head>
+
 <body>
-  <header class="appbar"><div class="topline"><div class="logo">IV</div><div class="titles"><h1>GTA IV Companion</h1><p>by Big Sox Studios</p></div><div class="bigpct" id="bigPct">0%</div></div><div class="meter"><span id="topMeter"></span></div></header>
-<section class="dashboard-home">
-  <h2>Continue Your Journey</h2>
 
-  <div class="dashboard-grid">
-    <div class="card">
-      <h3>Continue Journey</h3>
-      <p>Resume your GTA IV progress where you left off.</p>
-      <button class="control">Continue</button>
-    </div>
+  <header class="appbar">
+    <div class="topline">
+      <div class="logo">IV</div>
+      <div class="titles"><h1>GTA IV Companion</h1><p>by Big Sox Studios</p></div>
+      <div class="bigpct" id="bigPct">0%</div>
+    </div><div class="meter"><span id="topMeter"></span></div>
+  </header>
 
-    <div class="card">
-      <h3>Story Progress</h3>
-      <p>0%</p>
-    </div>
-
-    <div class="card">
-      <h3>Completion</h3>
-      <p>0%</p>
-    </div>
-  </div>
-</section>
 <main>
+
   <section class="hero">
       <div class="heroIn"><div class="kicker">Liberty City completion tracker</div>
         <h2>Replay roadmap, ordered for 100%</h2><p>Tap boxes as you go. Progress saves on your device. The order is spoiler-light: mission names and unlock timing, not plot explanations.</p>
@@ -54,16 +44,17 @@
           <div class="stat"><b id="statSide">0%</b><span>100% cleanup</span></div>
         </div>
       </section>
+
   <nav class="tabs" id="tabs"></nav>
   <div id="app"></div>
 
   <section id="settings" class="section">
-  <button class="sectionHeader" data-toggle="settings">
+    <button class="sectionHeader" data-toggle="settings">
     <div>
       <h3>Settings</h3>
       <p>App info and preferences</p>
     </div>
-  </button>
+   </button>
 
 <div class="body">
   <div class="group">
@@ -110,15 +101,20 @@
     </div>
   </div>
 </div>
-
 </section>
+
 </main>
+
 <div class="toast" id="toast">Saved</div>
+
 <div class="bottomNav">
   <button id="toTop">Top</button>
   <button class="primary" id="nextTask">Next unchecked</button>
 </div>
+
 <script src="js/data.js"></script>
 <script src="js/app.js"></script>
+
 </body>
+
 </html>
