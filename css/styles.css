@@ -204,17 +204,21 @@ main {
 
 .control,
 .search {
-  min-height: 68px;
   border: 1px solid var(--line);
   border-radius: 15px;
   background: var(--panel2);
   color: var(--ink);
   padding: 12px;
   font-weight: 800;
+}
+
+.dashboard-button {
+  min-height: 68px;
   display: grid;
   place-items: center;
   text-align: center;
 }
+
 
 .control.danger {
   background: #2b1111;
