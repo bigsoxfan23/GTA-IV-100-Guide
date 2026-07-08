@@ -128,7 +128,7 @@ main {
 }
 
 /* Dashboard */
-.hero {
+.dashboard-header {
   border: 1px solid var(--line);
   border-radius: 24px;
   background: linear-gradient(180deg, rgba(18, 36, 29, .98), rgba(9, 19, 14, .98));
@@ -136,7 +136,7 @@ main {
   overflow: hidden;
 }
 
-.heroIn {
+.dashboard-content {
   padding: 12px 14px;
 }
 
@@ -148,14 +148,14 @@ main {
   letter-spacing: .02em;
 }
 
-.hero h2 {
+.dashboard-header h2 {
   font-size: 18px;
   font-weight: 600;
   margin: 2px 0 10px;
   color: var(--muted);
 }
 
-.hero p {
+.dashboard-header p {
   color: var(--muted);
   margin: 4px 0;
   font-size: 14px;
@@ -495,7 +495,7 @@ main {
     padding: 0;
   }
 
-  .hero,
+  .dashboard-header,
   .section {
     box-shadow: none;
     background: #fff;
@@ -554,7 +554,7 @@ main {
     font-size: 21px;
   }
 
-  .hero h2 {
+  .dashboard-header h2 {
     font-size: 20px;
   }
 
