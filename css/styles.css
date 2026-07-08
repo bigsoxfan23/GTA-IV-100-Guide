@@ -192,21 +192,28 @@ main {
   grid-template-columns: 1fr 1fr;
   gap: 8px;
   margin-top: 10px;
+  align-items: stretch;
 }
 
 .search {
   grid-column: 1 / -1;
   font-weight: 500;
+  text-align: left;
+  place-items: center start;
 }
 
 .control,
 .search {
+  min-height: 68px;
   border: 1px solid var(--line);
   border-radius: 15px;
   background: var(--panel2);
   color: var(--ink);
   padding: 12px;
   font-weight: 800;
+  display: grid;
+  place-items: center;
+  text-align: center;
 }
 
 .control.danger {
@@ -217,7 +224,6 @@ main {
 
 .file {
   position: relative;
-  text-align: center;
   overflow: hidden;
 }
 
