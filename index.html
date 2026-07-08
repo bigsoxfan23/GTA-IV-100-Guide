@@ -56,6 +56,7 @@
       </section>
   <nav class="tabs" id="tabs"></nav>
   <div id="app"></div>
+
   <section id="settings" class="section">
   <button class="sectionHeader" data-toggle="settings">
     <div>
@@ -64,24 +65,53 @@
     </div>
   </button>
 
-  <div class="body">
-    <div class="group">
-      <div class="groupTitle">
-        <span>About</span>
+<div class="body">
+  <div class="group">
+    <div class="groupTitle">
+      <span>About</span>
+    </div>
+
+    <div class="settings-card">
+      <div class="about-row">
+        <span>Studio:</span>
+        <strong>Big Sox Studios</strong>
       </div>
 
-      <div class="task">
-        <div>
-          <div class="name">Big Sox Studios</div>
-          <div class="detail">GTA IV Companion · v0.1.0 Alpha</div>
-          <div class="detail">Built by Big Sox Studios using HTML, CSS, and JavaScript.</div>
-          <button class="control">View Changelog</button>
-        </div>
+      <div class="about-row">
+        <span>App:</span>
+        <strong>GTA IV Companion</strong>
       </div>
+
+      <div class="about-row">
+        <span>Version:</span>
+        <strong>v0.1.0 Alpha</strong>
+      </div>
+
+      <div class="about-note">
+        GTA IV Companion is a free companion app built by Big Sox Studios to help players track 100% completion in Grand Theft Auto IV.
+      </div>
+
+      <div class="about-note">
+        Progress is stored locally on your device unless you export a backup.
+      </div>
+
+      <div class="about-note">
+        Completion information is verified using GTABase and GTA Wiki.
+      </div>
+
+      <a
+        class="control settings-link"
+        href="https://github.com/bigsoxfan23/GTA-IV-100-Guide"
+        target="_blank"
+        rel="noopener noreferrer"
+      >
+        View Changelog
+      </a>
     </div>
   </div>
+</div>
+
 </section>
-  <p class="footer">Made as a personal GTA IV completion companion. Sources to verify 100% categories: GTABase and GTA Wiki. Your save data stays in this browser unless exported.</p>
 </main>
 <div class="toast" id="toast">Saved</div>
 <div class="bottomNav">

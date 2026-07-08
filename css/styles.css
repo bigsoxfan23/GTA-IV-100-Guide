@@ -32,3 +32,38 @@ main{max-width:1080px;margin:auto;padding:14px}.hero{border:1px solid var(--line
     grid-template-columns: 1fr;
   }
 }
+
+.settings-card {
+  display: grid;
+  gap: 12px;
+  padding: 16px;
+  border: 1px solid var(--line);
+  border-radius: 16px;
+  background: rgba(4, 8, 6, 0.62);
+}
+
+.about-row {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  padding-bottom: 10px;
+  border-bottom: 1px solid rgba(120, 255, 160, 0.16);
+}
+
+.about-row span {
+  color: var(--muted);
+  width: 70px;
+  flex-shrink: 0;
+}
+
+.about-note {
+  color: var(--muted);
+  line-height: 1.45;
+}
+
+.settings-link {
+  display: inline-block;
+  width: fit-content;
+  text-decoration: none;
+  margin-top: 6px;
+}
