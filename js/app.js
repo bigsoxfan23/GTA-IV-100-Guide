@@ -1,9 +1,12 @@
+import { loadTimelineData } from './data-loader.js';
+
 /* -----------------------------
    App State
 ----------------------------- */
 
 const KEY = 'gtaiv-companion-v2';
 
+let DATA = [];
 let state = JSON.parse(localStorage.getItem(KEY) || '{}');
 let hideDone = false;
 let allCollapsed = false;
@@ -17,9 +20,30 @@ const $ = s => document.querySelector(s);
 const $$ = s => [...document.querySelectorAll(s)];
 
 function item(raw) {
-  return Array.isArray(raw)
-    ? { name: raw[0], tag: raw[1] || '', tone: raw[2] || '' }
-    : { name: raw, tag: '', tone: '' };
+  if (Array.isArray(raw)) {
+    return {
+      name: raw[0],
+      tag: raw[1] || '',
+      tone: raw[2] || '',
+      timelineId: ''
+    };
+  }
+
+  if (raw && typeof raw === 'object') {
+    return {
+      name: raw.name || '',
+      tag: raw.tag || '',
+      tone: raw.tone || '',
+      timelineId: raw.timelineId || ''
+    };
+  }
+
+  return {
+    name: String(raw || ''),
+    tag: '',
+    tone: '',
+    timelineId: ''
+  };
 }
 
 function id(sec, group, i, name) {
@@ -348,9 +372,28 @@ $('#nextTask').onclick = () => {
    Init
 ----------------------------- */
 
-renderTabs();
-render();
+async function init() {
+  try {
+    DATA = await loadTimelineData();
 
-if ('serviceWorker' in navigator) {
-  navigator.serviceWorker.register('./sw.js').catch(() => {});
+    renderTabs();
+    render();
+  } catch (error) {
+    console.error(error);
+
+    $('#app').innerHTML = `
+      <section class="section">
+        <div class="body">
+          <strong>Timeline data could not be loaded.</strong>
+          <p>Please refresh the app or try again later.</p>
+        </div>
+      </section>
+    `;
+  }
+
+  if ('serviceWorker' in navigator) {
+    navigator.serviceWorker.register('./sw.js').catch(() => {});
+  }
 }
+
+init();
