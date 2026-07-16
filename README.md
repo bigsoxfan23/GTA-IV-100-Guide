@@ -55,7 +55,8 @@ Before generating a new `timeline.json`, always run:
 
 ```bash
 npm test
-npm run validate:timeline -- master-timeline.csv
+npm run validate:timeline -- imports/master-timeline.csv
+npm run export:timeline -- imports/master-timeline.csv
 ```
 
 JSON should only be exported after the validator reports a successful pass.
@@ -69,6 +70,7 @@ assets/     Images, icons, fonts
 css/        Stylesheets
 data/       Generated JSON data
 docs/       Project documentation
+imports/    Raw CSV files exported from Google Sheets
 js/         Application code
 scripts/    Developer utilities
 test/       Automated tests
@@ -78,8 +80,9 @@ test/       Automated tests
 
 ## Documentation
 
-- `docs/VALIDATION.md` — Timeline validation process
-- `README.md` — Project overview
+- docs/VALIDATION.md — Timeline validation and export workflow
+- docs/ROADMAP.md — Long-term project roadmap
+- README.md — Project overview
 
 ---
 

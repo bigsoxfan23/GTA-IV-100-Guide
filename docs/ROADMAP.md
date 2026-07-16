@@ -11,9 +11,9 @@
 
 ## Timeline Data
 
-- [ ] Build the timeline JSON exporter
-- [ ] Export the first validated `timeline.json`
-- [ ] Add exporter tests
+- [x] Build the timeline JSON exporter
+- [x] Export the first validated `timeline.json`
+- [x] Add exporter tests
 - [ ] Load timeline data from JSON in the app
 - [ ] Remove hardcoded timeline data from `js/data.js`
 
