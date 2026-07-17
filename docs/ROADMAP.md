@@ -30,7 +30,7 @@
 
 - [x] Cache `timeline.json` for offline use
 - [x] Confirm service-worker updates work correctly
-- [ ] Test progress export and import
+- [x] Test progress export and import
 - [ ] Add data-version migration support
 
 ## Polish
