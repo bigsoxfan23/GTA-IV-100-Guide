@@ -14,13 +14,13 @@
 - [x] Build the timeline JSON exporter
 - [x] Export the first validated `timeline.json`
 - [x] Add exporter tests
-- [ ] Load timeline data from JSON in the app
-- [ ] Remove hardcoded timeline data from `js/data.js`
+- [x] Load timeline data from JSON in the app
+- [x] Remove hardcoded timeline data from `js/data.js`
 
 ## Application Features
 
-- [ ] Render the optimized timeline
-- [ ] Track completion by Timeline ID
+- [x] Render the optimized timeline
+- [x] Track completion by Timeline ID
 - [ ] Add timeline filters
 - [ ] Improve search
 - [ ] Display task details and unlock requirements
@@ -28,9 +28,9 @@
 
 ## Offline and Data Safety
 
-- [ ] Cache `timeline.json` for offline use
-- [ ] Confirm service-worker updates work correctly
-- [ ] Test progress export and import
+- [x] Cache `timeline.json` for offline use
+- [x] Confirm service-worker updates work correctly
+- [x] Test progress export and import
 - [ ] Add data-version migration support
 
 ## Polish

@@ -80,8 +80,9 @@ test/       Automated tests
 
 ## Documentation
 
-- docs/VALIDATION.md — Timeline validation and export workflow
-- docs/ROADMAP.md — Long-term project roadmap
+- [Validation](docs/VALIDATION.md) — Timeline validation and export workflow
+- [Roadmap](docs/ROADMAP.md) — Long-term project roadmap
+- [Architecture](docs/ARCHITECTURE.md) – Project structure, data flow, and development workflow.
 - README.md — Project overview
 
 ---
