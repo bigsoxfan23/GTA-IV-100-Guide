@@ -46,7 +46,11 @@ function item(raw) {
   };
 }
 
-function id(sec, group, i, name) {
+function id(sec, group, i, name, timelineId = '') {
+  if (timelineId) {
+    return timelineId;
+  }
+
   return `${sec}|${group}|${i}|${String(name).slice(0, 90)}`;
 }
 
@@ -81,7 +85,7 @@ function render() {
     );
 
     const done = tasks.filter(t =>
-      state[id(sec.id, t.group, t.i, t.name)]
+      state[id(sec.id, t.group, t.i, t.name, t.timelineId)]
     ).length;
 
     const el = document.createElement('section');
@@ -130,7 +134,7 @@ function render() {
 
       g.items.forEach((raw, i) => {
         const it = item(raw);
-        const tid = id(sec.id, g.name, i, it.name);
+        const tid = id(sec.id, g.name, i, it.name, it.timelineId);
         const checked = !!state[tid];
 
         const task = document.createElement('label');
