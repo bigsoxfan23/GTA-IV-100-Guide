@@ -1,17 +1,18 @@
 <!doctype html>
 <html lang="en">
+<meta name="mobile-web-app-capable" content="yes">
 
 <head>
-<meta charset="utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
-<meta name="theme-color" content="#07120f">
-<meta name="apple-mobile-web-app-capable" content="yes">
-<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
-<meta name="apple-mobile-web-app-title" content="GTA IV Guide">
-<link rel="manifest" href="manifest.webmanifest">
-<link rel="apple-touch-icon" href="assets/images/icon-192.png">
-<title>GTA IV 100% Companion</title>
-<link rel="stylesheet" href="css/styles.css">
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <meta name="theme-color" content="#07120f">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+  <meta name="apple-mobile-web-app-title" content="GTA IV Guide">
+  <link rel="manifest" href="manifest.webmanifest">
+  <link rel="apple-touch-icon" href="assets/images/icon-192.png">
+  <title>GTA IV 100% Companion</title>
+  <link rel="stylesheet" href="css/styles.css">
 </head>
 
 <body>
@@ -19,106 +20,109 @@
   <header class="appbar">
     <div class="topline">
       <div class="logo">IV</div>
-      <div class="titles"><h1>GTA IV Companion</h1><p>by Big Sox Studios</p></div>
+      <div class="titles">
+        <h1>GTA IV Companion</h1>
+        <p>by Big Sox Studios</p>
+      </div>
       <div class="bigpct" id="bigPct">0%</div>
-    </div><div class="meter"><span id="topMeter"></span></div>
+    </div>
+    <div class="meter"><span id="topMeter"></span></div>
   </header>
 
-<main>
+  <main>
 
-  <section class="dashboard-header">
-      <div class="dashboard-content"><div class="kicker">Dashboard</div>
+    <section class="dashboard-header">
+      <div class="dashboard-content">
+        <div class="kicker">Dashboard</div>
         <h2>Continue Your Journey</h2>
-      <!-- >  <div class="installBox"><b>iPhone install:</b> after hosting, open in Safari → Share → Add to Home Screen. Works offline after the first load.</div> -->
+        <!-- >  <div class="installBox"><b>iPhone install:</b> after hosting, open in Safari → Share → Add to Home Screen. Works offline after the first load.</div> -->
         <div class="controls"><input id="search" class="search" placeholder="Search…">
           <button class="control dashboard-button" id="hideDone">Hide Completed</button>
           <button class="control dashboard-button" id="collapseAll">Collapse</button>
           <button class="control dashboard-button" id="exportBtn">Export</button>
-          <label class="control dashboard-button file">Import<input id="importFile" type="file" accept="application/json"></label>
+          <label class="control dashboard-button file">Import<input id="importFile" type="file"
+              accept="application/json"></label>
           <button class="control dashboard-button danger" id="resetBtn">Reset</button>
         </div>
+      </div>
+      <div class="dashboard">
+        <div class="stat"><b id="statDone">0</b><span>Completed tasks</span></div>
+        <div class="stat"><b id="statLeft">0</b><span>Remaining tasks</span></div>
+        <div class="stat"><b id="statStory">0%</b><span>Story progress</span></div>
+        <div class="stat"><b id="statSide">0%</b><span>Completion progress</span></div>
+      </div>
+    </section>
+
+    <nav class="tabs" id="tabs"></nav>
+    <div id="app"></div>
+
+    <section id="settings" class="section">
+      <button class="sectionHeader" data-toggle="settings">
+        <div>
+          <h3>Settings</h3>
+          <p>App info and preferences</p>
         </div>
-        <div class="dashboard">
-          <div class="stat"><b id="statDone">0</b><span>Completed tasks</span></div>
-          <div class="stat"><b id="statLeft">0</b><span>Remaining tasks</span></div>
-          <div class="stat"><b id="statStory">0%</b><span>Story progress</span></div>
-          <div class="stat"><b id="statSide">0%</b><span>Completion progress</span></div>
+      </button>
+
+      <div class="body">
+        <div class="group">
+          <div class="groupTitle">
+            <span>About</span>
+          </div>
+
+          <div class="settings-card">
+            <div class="about-row">
+              <span>Studio:</span>
+              <strong>Big Sox Studios</strong>
+            </div>
+
+            <div class="about-row">
+              <span>App:</span>
+              <strong>GTA IV Companion</strong>
+            </div>
+
+            <div class="about-row">
+              <span>Version:</span>
+              <strong>v0.4.0 Alpha</strong>
+            </div>
+
+            <div class="about-row">
+              <span>Milestone:</span>
+              <strong>Smart Completion</strong>
+            </div>
+
+            <div class="about-note">
+              GTA IV Companion is a free companion app built by Big Sox Studios to help players track 100% completion in
+              Grand Theft Auto IV.
+            </div>
+
+            <div class="about-note">
+              Progress is stored locally on your device unless you export a backup.
+            </div>
+
+            <div class="about-note">
+              Completion information is verified using GTABase and GTA Wiki.
+            </div>
+
+            <a class="control settings-link" href="https://github.com/bigsoxfan23/GTA-IV-100-Guide" target="_blank"
+              rel="noopener noreferrer">
+              View Changelog
+            </a>
+          </div>
         </div>
-      </section>
-
-  <nav class="tabs" id="tabs"></nav>
-  <div id="app"></div>
-
-  <section id="settings" class="section">
-    <button class="sectionHeader" data-toggle="settings">
-    <div>
-      <h3>Settings</h3>
-      <p>App info and preferences</p>
-    </div>
-   </button>
-
-<div class="body">
-  <div class="group">
-    <div class="groupTitle">
-      <span>About</span>
-    </div>
-
-    <div class="settings-card">
-      <div class="about-row">
-        <span>Studio:</span>
-        <strong>Big Sox Studios</strong>
       </div>
+    </section>
 
-      <div class="about-row">
-        <span>App:</span>
-        <strong>GTA IV Companion</strong>
-      </div>
+  </main>
 
-      <div class="about-row">
-        <span>Version:</span>
-        <strong>v0.4.0 Alpha</strong>
-      </div>
+  <div class="toast" id="toast">Saved</div>
 
-      <div class="about-row">
-    <span>Milestone:</span>
-    <strong>Smart Completion</strong>
-      </div>
-
-      <div class="about-note">
-        GTA IV Companion is a free companion app built by Big Sox Studios to help players track 100% completion in Grand Theft Auto IV.
-      </div>
-
-      <div class="about-note">
-        Progress is stored locally on your device unless you export a backup.
-      </div>
-
-      <div class="about-note">
-        Completion information is verified using GTABase and GTA Wiki.
-      </div>
-
-      <a
-        class="control settings-link"
-        href="https://github.com/bigsoxfan23/GTA-IV-100-Guide"
-        target="_blank"
-        rel="noopener noreferrer"
-      >
-        View Changelog
-      </a>
-    </div>
+  <div class="bottomNav">
+    <button id="toTop">Top</button>
+    <button class="primary" id="nextTask">Next unchecked</button>
   </div>
-</div>
-</section>
 
-</main>
-
-<div class="toast" id="toast">Saved</div>
-
-<div class="bottomNav">
-  <button id="toTop">Top</button>
-  <button class="primary" id="nextTask">Next unchecked</button>
-</div>
-
-<script type="module" src="js/app.js"></script>
+  <script type="module" src="js/app.js"></script>
 
 </body>
 
