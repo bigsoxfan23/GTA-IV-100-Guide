@@ -491,6 +491,7 @@ main {
 
 /* Print */
 @media print {
+
   .appbar,
   .tabs,
   .controls,

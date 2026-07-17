@@ -7,7 +7,17 @@ import { loadTimelineData } from './data-loader.js';
 const KEY = 'gtaiv-companion-v2';
 
 let DATA = [];
-let state = JSON.parse(localStorage.getItem(KEY) || '{}');
+
+function loadSavedState() {
+  try {
+    return JSON.parse(localStorage.getItem(KEY) || '{}');
+  } catch (error) {
+    console.error('Saved progress could not be read.', error);
+    return {};
+  }
+}
+
+let state = loadSavedState();
 let hideDone = false;
 let allCollapsed = false;
 
@@ -383,20 +393,7 @@ async function init() {
     renderTabs();
     render();
   } catch (error) {
-    console.error(error);
-
-    $('#app').innerHTML = `
-      <section class="section">
-        <div class="body">
-          <strong>Timeline data could not be loaded.</strong>
-          <p>Please refresh the app or try again later.</p>
-        </div>
-      </section>
-    `;
-  }
-
-  if ('serviceWorker' in navigator) {
-    navigator.serviceWorker.register('./sw.js').catch(() => {});
+    console.error('App initialization failed.', error);
   }
 }
 

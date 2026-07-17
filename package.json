@@ -2,10 +2,10 @@
   "name": "gta-iv-100-guide",
   "private": true,
   "scripts": {
-  "test": "node --test",
-  "validate:timeline": "node scripts/validate-timeline.mjs",
-  "export:timeline": "node scripts/export-timeline.mjs"
-},
+    "test": "node --test",
+    "validate:timeline": "node scripts/validate-timeline.mjs",
+    "export:timeline": "node scripts/export-timeline.mjs"
+  },
   "engines": {
     "node": ">=20"
   }
