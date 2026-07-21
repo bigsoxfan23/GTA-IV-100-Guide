@@ -15,7 +15,11 @@ export function buildSections(records) {
 
   for (const record of sortedRecords) {
     const sectionName = record.Section || 'Other';
-    const groupName = record.Type || 'Other';
+
+    const groupName =
+      record.Name === 'Choose Deal or Revenge'
+        ? 'Mission'
+        : record.Type || 'Other';
 
     if (!sections.has(sectionName)) {
       sections.set(sectionName, {
@@ -43,8 +47,9 @@ export function buildSections(records) {
       section.groups.push(group);
     }
 
-    group.items.push({
+    const timelineItem = {
       timelineId: record['Timeline ID'],
+      type: record.Type || 'Other',
       name: record.Name,
       tag: record.Requirement,
       tone: record.Requirement === '100%' ? 'warn' : '',
@@ -52,7 +57,9 @@ export function buildSections(records) {
       availableAfter: record['Available After'],
       travelZone: record['Travel Zone'],
       whyNow: record['Why Now?']
-    });
+    };
+
+    group.items.push(timelineItem);
   }
 
   return [...sections.values()];

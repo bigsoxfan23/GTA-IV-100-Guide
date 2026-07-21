@@ -33,6 +33,7 @@ function item(raw) {
   if (Array.isArray(raw)) {
     return {
       name: raw[0],
+      type: '',
       tag: raw[1] || '',
       tone: raw[2] || '',
       timelineId: ''
@@ -42,6 +43,7 @@ function item(raw) {
   if (raw && typeof raw === 'object') {
     return {
       name: raw.name || '',
+      type: raw.type || '',
       tag: raw.tag || '',
       tone: raw.tone || '',
       timelineId: raw.timelineId || ''
@@ -50,6 +52,7 @@ function item(raw) {
 
   return {
     name: String(raw || ''),
+    type: '',
     tag: '',
     tone: '',
     timelineId: ''
@@ -132,7 +135,7 @@ function render() {
       }));
 
       const gd = gTasks.filter(t =>
-        state[id(sec.id, g.name, t.i, t.name)]
+        state[id(sec.id, g.name, t.i, t.name, t.timelineId)]
       ).length;
 
       group.innerHTML = `
@@ -149,7 +152,8 @@ function render() {
 
         const task = document.createElement('label');
         task.className = `task ${checked ? 'done' : ''}`;
-        task.dataset.text = `${it.name} ${it.tag} ${g.name} ${sec.title}`.toLowerCase();
+        task.dataset.text =
+          `${it.name} ${it.tag} ${it.type} ${g.name} ${sec.title}`.toLowerCase();
 
         task.innerHTML = `
           <input
@@ -160,7 +164,7 @@ function render() {
 
           <div>
             <div class="name">${it.name}</div>
-            <div class="detail">${g.name}</div>
+           <div class="detail">${it.type || g.name}</div>
           </div>
 
           ${it.tag ? `<span class="badge ${it.tone}">${it.tag}</span>` : ''}
