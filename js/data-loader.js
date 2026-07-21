@@ -51,6 +51,7 @@ export function buildSections(records) {
       timelineId: record['Timeline ID'],
       type: record.Type || 'Other',
       name: record.Name,
+      requirement: record.Requirement || '',
       tag: record.Requirement,
       tone: record.Requirement === '100%' ? 'warn' : '',
       instructions: record.Instructions,

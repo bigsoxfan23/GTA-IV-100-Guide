@@ -34,6 +34,7 @@ function item(raw) {
     return {
       name: raw[0],
       type: '',
+      requirement: '',
       tag: raw[1] || '',
       tone: raw[2] || '',
       timelineId: ''
@@ -44,6 +45,7 @@ function item(raw) {
     return {
       name: raw.name || '',
       type: raw.type || '',
+      requirement: raw.requirement || '',
       tag: raw.tag || '',
       tone: raw.tone || '',
       timelineId: raw.timelineId || ''
@@ -53,6 +55,7 @@ function item(raw) {
   return {
     name: String(raw || ''),
     type: '',
+    requirement: '',
     tag: '',
     tone: '',
     timelineId: ''
@@ -69,6 +72,39 @@ function id(sec, group, i, name, timelineId = '') {
 
 function pct(a, b) {
   return b ? Math.round((a / b) * 100) : 0;
+}
+
+function getTimelineTasks() {
+  return DATA.flatMap(sec =>
+    sec.groups.flatMap(group =>
+      group.items.map((raw, index) => {
+        const task = item(raw);
+
+        return {
+          ...task,
+          stateId: id(
+            sec.id,
+            group.name,
+            index,
+            task.name,
+            task.timelineId
+          )
+        };
+      })
+    )
+  );
+}
+
+function calculateProgress(tasks) {
+  const total = tasks.length;
+  const completed = tasks.filter(task => state[task.stateId]).length;
+
+  return {
+    completed,
+    total,
+    remaining: total - completed,
+    percentage: pct(completed, total)
+  };
 }
 
 
@@ -221,19 +257,24 @@ function bind() {
 ----------------------------- */
 
 function update() {
-  const boxes = $$('input[type=checkbox][data-id]');
-  const done = boxes.filter(b => b.checked).length;
+  const tasks = getTimelineTasks();
 
-  $('#bigPct').textContent = pct(done, boxes.length) + '%';
-  $('#topMeter').style.width = pct(done, boxes.length) + '%';
-  $('#statDone').textContent = done;
-  $('#statLeft').textContent = boxes.length - done;
+  const overallProgress = calculateProgress(tasks);
 
-  const story = $$('#phase1 input, #phase2 input, #phase3 input, #phase4 input, #phase5 input');
-  $('#statStory').textContent = pct(story.filter(b => b.checked).length, story.length) + '%';
+  const storyTasks = tasks.filter(
+    task => task.requirement.trim().toLowerCase() === 'story'
+  );
 
-  const side = $$('#side input, #collectibles input, #friends input');
-  $('#statSide').textContent = pct(side.filter(b => b.checked).length, side.length) + '%';
+  const storyProgress = calculateProgress(storyTasks);
+
+  $('#bigPct').textContent = `${overallProgress.percentage}%`;
+  $('#topMeter').style.width = `${overallProgress.percentage}%`;
+
+  $('#statDone').textContent = overallProgress.completed;
+  $('#statLeft').textContent = overallProgress.remaining;
+
+  $('#statStory').textContent = `${storyProgress.percentage}%`;
+  $('#statSide').textContent = `${overallProgress.percentage}%`;
 
   $$('.section').forEach(sec => {
     const boxes = [...sec.querySelectorAll('input[type=checkbox][data-id]')];
